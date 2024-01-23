@@ -20,6 +20,15 @@ choice_list.append('Walk around campus for a while')
 
 
 
+#options for pop quiz
+quiz_options_list = ([])
+
+quiz_options_list.append('It\'s easier on the eyes')
+quiz_options_list.append('It makes the code run faster')
+quiz_options_list.append('It\' a secret programming rule')
+
+
+
 #dialogue
 dialogue_list = ([])
 #intro
