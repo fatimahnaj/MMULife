@@ -146,7 +146,7 @@ dialogue_list.append(
     "Some students immediately delve into their notes, quickly scanning their notes and the materials."
     )
 dialogue_list.append(
-    "quiz time !!!"
+    "Question: How do you go from 98 to 720 using just one letter? "
     )
 #after class
 dialogue_list.append(
