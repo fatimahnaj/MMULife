@@ -26,6 +26,13 @@ quiz_options_list.append('E')
 quiz_options_list.append('x')
 quiz_options_list.append('t')
 
+#game_over screen
+game_over_list = ([])
+
+game_over_list.append('Zero Hearts Left!')
+game_over_list.append('“Remember, making better choices is key.')
+game_over_list.append('Retry for a better day!”')
+
 
 #dialogue
 dialogue_list = ([])
