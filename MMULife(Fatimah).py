@@ -105,6 +105,89 @@ def navigate(y):
     else:
         return False
 
+# def question_loop():
+#     global current_screen
+#     global heart_score
+#     loop = False
+#     while not loop:
+#         # for event in pygame.event.get():
+#         #     if event.type == pygame.QUIT:
+#         #         pygame.quit()
+#             # if event.type == pygame.MOUSEBUTTONDOWN:
+#             current_screen = 42-1
+#             if navigate(140):
+#                 loop = True #Exit the loop when the correct button is chosen
+#                 current_screen += 1
+#             elif navigate(70):
+#                 loop = False
+#                 heart_score -= 1 
+#                 popup_image('silhouette.png', 230, 100)
+#                 current_screen = 42-1
+#             elif navigate(210) :
+#                 loop = False
+#                 heart_score -= 1 
+#                 popup_image('silhouette.png', 230, 100)
+#                 current_screen = 42-1
+#             else:
+#                 loop = False
+
+#         pygame.display.flip()
+    
+# def question_loop():
+#     global current_screen
+#     global heart_score
+#     loop = True
+#     while loop:
+#         for event in pygame.event.get():
+#             if event.type == pygame.QUIT:
+#                 pygame.quit()
+#             # if event.type == pygame.MOUSEBUTTONDOWN:
+#             current_screen = screen42
+#             if navigate(140):
+#                 loop = False #Exit the loop when the correct button is chosen
+#                 current_screen += 1
+#                 pygame.display.flip()
+#             elif navigate(70):
+#                 loop = True
+#                 heart_score -= 1 
+#                 popup_image('silhouette.png', 230, 100)
+#                 pygame.display.flip()
+#             elif navigate(210) :
+#                 loop = True
+#                 heart_score -= 1 
+#                 popup_image('silhouette.png', 230, 100)
+#                 pygame.display.flip()
+#             else:
+#                 if pygame.mouse.get_pressed()[0] == 1:
+#                     current_screen = current_screen
+
+#     pygame.display.flip()
+
+def question_loop():
+    global current_screen
+    global heart_score
+
+    while True:
+        screen42()
+        pygame.display.flip()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                # Check if the mouse click is within the correct coordinate range
+                if navigate(140):
+                    # Correct click, exit the loop
+                    current_screen += 1
+                    return
+                elif navigate(70):
+                    heart_score -= 1 
+                    pygame.display.flip()
+                elif navigate(210) :
+                    heart_score -= 1 
+                    pygame.display.flip()
+
+
 #screens
 
 #scene: introduction       
@@ -138,8 +221,8 @@ def screen6():
     screen.blit(bg_opening, (0,0))
     draw_box()
     draw_text(dialogue_list[5])
-    draw_button((width - 220) // 2, 380, 200, 60, (82, 22, 14), (141, 35, 21))
-    draw_text(choice_list[0], 25, (255,255,255), 350, 410)
+    draw_button((width - 150) // 2, 390, 150, 50, (82, 22, 14), (141, 35, 21))
+    draw_text(choice_list[0], 25, (255,255,255), 360, 418)
     pygame.display.flip()
 
 #scene:bedroom
@@ -563,7 +646,7 @@ def screen58():
     draw_text(dialogue_list[51])
     pygame.display.flip()
 
-    
+
 def screen_gameOver():
     screen.blit(bg_gameOver, (0,0))
     draw_text(game_over_list[0], 30, (255,255,255))
@@ -583,7 +666,7 @@ heart_score = 3
 current_screen = 0
 
 #setting as False to repeat the loop when the user clicks on the incorrect button
-correct_ans_chosen = False
+loop_chosen = False
 
 # Main loop
 while True:
@@ -690,12 +773,11 @@ while True:
             elif current_screen == 54-1:
                 if pygame.mouse.get_pressed()[0] == 1:
                     current_screen = 57-1 
-            # move to next screen (in order)
+            elif current_screen == 42-1:
+                question_loop()
             else:
                 if pygame.mouse.get_pressed()[0] == 1:
                     current_screen += 1
                 
     # Call the current screen function
     screens[current_screen]()
-
-
