@@ -19,14 +19,12 @@ choice_list.append('Go back to hostel ')
 choice_list.append('Walk around campus for a while')
 
 
-
 #options for pop quiz
 quiz_options_list = ([])
 
 quiz_options_list.append('E')
 quiz_options_list.append('x')
 quiz_options_list.append('t')
-
 
 
 #dialogue
