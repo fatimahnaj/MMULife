@@ -105,89 +105,6 @@ def navigate(y):
     else:
         return False
 
-# def question_loop():
-#     global current_screen
-#     global heart_score
-#     loop = False
-#     while not loop:
-#         # for event in pygame.event.get():
-#         #     if event.type == pygame.QUIT:
-#         #         pygame.quit()
-#             # if event.type == pygame.MOUSEBUTTONDOWN:
-#             current_screen = 42-1
-#             if navigate(140):
-#                 loop = True #Exit the loop when the correct button is chosen
-#                 current_screen += 1
-#             elif navigate(70):
-#                 loop = False
-#                 heart_score -= 1 
-#                 popup_image('silhouette.png', 230, 100)
-#                 current_screen = 42-1
-#             elif navigate(210) :
-#                 loop = False
-#                 heart_score -= 1 
-#                 popup_image('silhouette.png', 230, 100)
-#                 current_screen = 42-1
-#             else:
-#                 loop = False
-
-#         pygame.display.flip()
-    
-# def question_loop():
-#     global current_screen
-#     global heart_score
-#     loop = True
-#     while loop:
-#         for event in pygame.event.get():
-#             if event.type == pygame.QUIT:
-#                 pygame.quit()
-#             # if event.type == pygame.MOUSEBUTTONDOWN:
-#             current_screen = screen42
-#             if navigate(140):
-#                 loop = False #Exit the loop when the correct button is chosen
-#                 current_screen += 1
-#                 pygame.display.flip()
-#             elif navigate(70):
-#                 loop = True
-#                 heart_score -= 1 
-#                 popup_image('silhouette.png', 230, 100)
-#                 pygame.display.flip()
-#             elif navigate(210) :
-#                 loop = True
-#                 heart_score -= 1 
-#                 popup_image('silhouette.png', 230, 100)
-#                 pygame.display.flip()
-#             else:
-#                 if pygame.mouse.get_pressed()[0] == 1:
-#                     current_screen = current_screen
-
-#     pygame.display.flip()
-
-def question_loop():
-    global current_screen
-    global heart_score
-
-    while True:
-        screen42()
-        pygame.display.flip()
-
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-            elif event.type == pygame.MOUSEBUTTONDOWN:
-                # Check if the mouse click is within the correct coordinate range
-                if navigate(140):
-                    # Correct click, exit the loop
-                    current_screen += 1
-                    return
-                elif navigate(70):
-                    heart_score -= 1 
-                    pygame.display.flip()
-                elif navigate(210) :
-                    heart_score -= 1 
-                    pygame.display.flip()
-
-
 #screens
 
 #scene: introduction       
@@ -650,6 +567,7 @@ def screen58():
 def screen_gameOver():
     screen.blit(bg_gameOver, (0,0))
     draw_text(game_over_list[0], 30, (255,255,255))
+    draw_button((width - 280) // 2, 100, 280, 60)
     popup_image('heart.png', 378, 60)
     pygame.display.flip()
 
@@ -657,7 +575,7 @@ def screen_gameOver():
 screens = [screen1,screen2, screen3, screen4, screen5, screen6, screen7, screen8, screen9, screen10, screen11, screen12, screen13, screen14, screen15, screen16, screen17,
            screen18, screen19, screen20, screen21, screen22, screen23, screen24, screen25, screen26, screen27, screen28, screen29, screen30, screen31, screen32, screen33, 
            screen34, screen35, screen36, screen37, screen38, screen39,  screen41, screen42, screen43, screen44, screen45, screen46, screen47, screen48, screen49, screen50,
-           screen51, screen52, screen53, screen54, screen55, screen56, screen57]
+           screen51, screen52, screen53, screen54, screen55, screen56, screen57, screen_gameOver]
     
 #initialize the score, the score starts with 3 hearts
 heart_score = 3
@@ -668,6 +586,7 @@ current_screen = 0
 #setting as False to repeat the loop when the user clicks on the incorrect button
 loop_chosen = False
 
+
 # Main loop
 while True:
     for event in pygame.event.get():
@@ -676,108 +595,131 @@ while True:
 
         #navigation
         else:
-            if current_screen == 6-1: #screen yg ada choices
-                if navigate(380):
-                    current_screen = 7-1 #next screen yg kita nak navigate to
+                if current_screen == 6-1: #screen yg ada choices
+                    if navigate(380):
+                        current_screen = 7-1 #next screen yg kita nak navigate to
+                    else:
+                        current_screen = current_screen #the screen wont change if tak tekan the button
+                elif current_screen == 9-1:
+                    if navigate(100):
+                        current_screen = 10-1
+                        heart_score += 1
+                    elif navigate(190):
+                        current_screen = 11-1
+                        heart_score -= 1
+                    else:
+                        current_screen = current_screen
+                elif current_screen == 10-1:
+                    if pygame.mouse.get_pressed()[0] == 1:
+                        current_screen = 14-1
+                elif current_screen == 15-1:
+                    if navigate(100):
+                        current_screen = 16-1
+                        heart_score -= 1 
+                    elif navigate(190):
+                        current_screen = 17-1
+                        heart_score += 1
+                    else:
+                        current_screen = current_screen
+                elif current_screen == 18-1:
+                    if navigate(100):
+                        current_screen = 19-1
+                        heart_score -= 1
+                    elif navigate(190):
+                        current_screen = 21-1
+                        heart_score += 1
+                    else:
+                        current_screen = current_screen
+                elif current_screen == 20-1:
+                    if pygame.mouse.get_pressed()[0] == 1:
+                        current_screen = 22-1
+                elif current_screen == 18-1:
+                    if pygame.mouse.get_pressed()[0] == 1:
+                        current_screen = 22-1
+                elif current_screen == 25-1:
+                    if navigate(100):
+                        current_screen = 26-1
+                        heart_score += 1
+                    elif navigate(190):
+                        current_screen = 27-1
+                        heart_score -= 1
+                    else:
+                        current_screen = current_screen
+                elif current_screen == 26-1:
+                    if pygame.mouse.get_pressed()[0] == 1:
+                        current_screen = 28-1
+                elif current_screen == 30-1:
+                    if navigate(70):
+                        current_screen = 31-1
+                        heart_score += 1
+                    elif navigate(140):
+                        current_screen = 32-1
+                        heart_score -= 1
+                    elif navigate(210):
+                        current_screen = 33-1
+                        heart_score -= 2
+                    else:
+                        current_screen = current_screen 
+                elif current_screen == 31-1:
+                    if pygame.mouse.get_pressed()[0] == 1:
+                        current_screen = 37-1
+                elif current_screen == 32-1:
+                    if pygame.mouse.get_pressed()[0] == 1:
+                        current_screen = 37-1 
+                elif current_screen == 45-1:
+                    if navigate(100):
+                        current_screen = 46-1
+                        heart_score -= 2
+                    elif navigate(190):
+                        current_screen = 48-1
+                    else:
+                        current_screen = current_screen 
+                elif current_screen == 47-1:
+                    if pygame.mouse.get_pressed()[0] == 1:
+                        current_screen = 49-1 
+                elif current_screen == 48-1:
+                    if pygame.mouse.get_pressed()[0] == 1:
+                        current_screen = 50-1 
+                elif current_screen == 50-1:
+                    if navigate(100):
+                        current_screen = 56-1
+                        heart_score -= 1
+                    elif navigate(190):
+                        current_screen = 51-1
+                        heart_score += 1
+                    else:
+                        current_screen = current_screen 
+                elif current_screen == 54-1:
+                    if pygame.mouse.get_pressed()[0] == 1:
+                        current_screen = 57-1       
                 else:
-                    current_screen = current_screen #the screen wont change if tak tekan the button
-            elif current_screen == 9-1:
-                if navigate(100):
-                    current_screen = 10-1
-                    heart_score += 1
-                elif navigate(190):
-                    current_screen = 11-1
-                    heart_score -= 1
-                else:
-                    current_screen = current_screen
-            elif current_screen == 10-1:
-                if pygame.mouse.get_pressed()[0] == 1:
-                    current_screen = 14-1
-            elif current_screen == 15-1:
-                if navigate(100):
-                    current_screen = 16-1
-                    heart_score -= 1 
-                elif navigate(190):
-                    current_screen = 17-1
-                    heart_score += 1
-                else:
-                    current_screen = current_screen
-            elif current_screen == 18-1:
-                if navigate(100):
-                    current_screen = 19-1
-                    heart_score -= 1
-                elif navigate(190):
-                    current_screen = 21-1
-                    heart_score += 1
-                else:
-                    current_screen = current_screen
-            elif current_screen == 20-1:
-                if pygame.mouse.get_pressed()[0] == 1:
-                    current_screen = 22-1
-            elif current_screen == 18-1:
-                if pygame.mouse.get_pressed()[0] == 1:
-                    current_screen = 22-1
-            elif current_screen == 25-1:
-                if navigate(100):
-                    current_screen = 26-1
-                    heart_score += 1
-                elif navigate(190):
-                    current_screen = 27-1
-                    heart_score -= 1
-                else:
-                    current_screen = current_screen
-            elif current_screen == 26-1:
-                if pygame.mouse.get_pressed()[0] == 1:
-                    current_screen = 28-1
-            elif current_screen == 30-1:
-                if navigate(70):
-                    current_screen = 31-1
-                    heart_score += 1
-                elif navigate(140):
-                    current_screen = 32-1
-                    heart_score -= 1
-                elif navigate(210):
-                    current_screen = 33-1
-                    heart_score -= 2
-                else:
-                    current_screen = current_screen 
-            elif current_screen == 31-1:
-                if pygame.mouse.get_pressed()[0] == 1:
-                    current_screen = 37-1
-            elif current_screen == 32-1:
-                if pygame.mouse.get_pressed()[0] == 1:
-                    current_screen = 37-1 
-            elif current_screen == 45-1:
-                if navigate(100):
-                    current_screen = 46-1
-                    heart_score -= 2
-                elif navigate(190):
-                    current_screen = 48-1
-                else:
-                    current_screen = current_screen 
-            elif current_screen == 47-1:
-                if pygame.mouse.get_pressed()[0] == 1:
-                    current_screen = 49-1 
-            elif current_screen == 48-1:
-                if pygame.mouse.get_pressed()[0] == 1:
-                    current_screen = 50-1 
-            elif current_screen == 50-1:
-                if navigate(100):
-                    current_screen = 56-1
-                    heart_score -= 1
-                elif navigate(190):
-                    current_screen = 51-1
-                    heart_score += 1
-                else:
-                    current_screen = current_screen 
-            elif current_screen == 54-1:
-                if pygame.mouse.get_pressed()[0] == 1:
-                    current_screen = 57-1 
-            elif current_screen == 42-1:
-                question_loop()
-            else:
-                if pygame.mouse.get_pressed()[0] == 1:
-                    current_screen += 1
+                    if pygame.mouse.get_pressed()[0] == 1:
+                        current_screen += 1
+            
+            
+
                 
+    if current_screen == 42-1:    
+        correct_ans_chosen = False  #setting as False to repeat the loop when the user clicks on the incorrect button
+        
+        while not correct_ans_chosen: #while True
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit() 
+
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    if navigate(140):
+                        current_screen += 1
+                        correct_ans_chosen = True  # Exit the loop when the correct button is chosen
+                    elif navigate(70) or navigate(210):
+                        heart_score -= 1
+                        correct_ans_chosen = False
+                        screen42()
+                    else:
+                        correct_ans_chosen = False
+                        screen42()
+
     # Call the current screen function
-    screens[current_screen]()
+    if 0 <= current_screen < len(screens):
+        screens[current_screen]()
