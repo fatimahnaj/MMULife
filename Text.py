@@ -20,11 +20,12 @@ choice_list.append('Walk around campus for a while')
 
 
 #options for pop quiz
-quiz_options_list = ([])
+quiz_list = ([])
 
-quiz_options_list.append('E')
-quiz_options_list.append('x')
-quiz_options_list.append('t')
+quiz_list.append('E')
+quiz_list.append('x')
+quiz_list.append('t')
+quiz_list.append('Question: How do you go from 98 to 720 using just one letter?')
 
 #game_over screen
 game_over_list = ([])
@@ -149,9 +150,6 @@ dialogue_list.append(
     )
 dialogue_list.append(
     "Some students immediately delve into their notes, quickly scanning their notes and the materials."
-    )
-dialogue_list.append(
-    "Question: How do you go from 98 to 720 using just one letter? "
     )
 #after class
 dialogue_list.append(
