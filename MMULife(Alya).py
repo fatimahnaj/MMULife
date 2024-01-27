@@ -664,10 +664,12 @@ while True:
                     heart_score = 3
                     if navigate(380):
                         current_screen = 1
+                    with open ('Savedata.txt', 'a') as file:
+                            file.write(f'play_again_button:{current_screen}\n')
                 elif heart_score <= 0:
                     play_sound('badEnd.mp3')
                     current_screen = 0
-                    heart_score = 3        
+                    heart_score = 3
                 elif current_screen == 9:
                     if navigate(100):
                         current_screen = 10
@@ -676,6 +678,7 @@ while True:
                             file.write(' \n')
                             file.write(f'sleep_first_button:{current_screen}\n')
                     elif navigate(190):
+                        play_sound('genshin.mp3')
                         current_screen = 11
                         heart_score -= 1
                         with open ('Savedata.txt', 'a') as file:
@@ -832,3 +835,4 @@ while True:
    
     if 0 <= current_screen < len(screens):
         screens[current_screen]()
+
