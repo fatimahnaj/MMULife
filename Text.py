@@ -16,24 +16,23 @@ choice_list.append('Make an escape')
 choice_list.append('Buy at pop up stall')
 choice_list.append('Save money')
 choice_list.append('Go back to hostel ')
-choice_list.append('Walk around campus for a while')
-
+choice_list.append('Walk around campus')
 
 #options for pop quiz
-quiz_list = ([])
+quiz_options_list = ([])
 
-quiz_list.append('E')
-quiz_list.append('x')
-quiz_list.append('t')
-quiz_list.append('Question: How do you go from 98 to 720 using just one letter?')
+quiz_options_list.append('E')
+quiz_options_list.append('x')
+quiz_options_list.append('t')
+
 
 #game_over screen
 game_over_list = ([])
 
-game_over_list.append('Zero Hearts Left!')
-game_over_list.append('“Remember, making better choices is key.')
-game_over_list.append('Retry for a better day!”')
-
+game_over_list.append('ZERO Hearts Left!')
+game_over_list.append('Remember, making better choices is key.')
+game_over_list.append('Retry for a better day!')
+game_over_list.append('PLAY AGAIN')
 
 #dialogue
 dialogue_list = ([])
@@ -151,6 +150,9 @@ dialogue_list.append(
 dialogue_list.append(
     "Some students immediately delve into their notes, quickly scanning their notes and the materials."
     )
+dialogue_list.append(
+    "Question: How do you go from 98 to 720 using just one letter?"
+    )
 #after class
 dialogue_list.append(
     "You step out of the classroom, backpack slung over one shoulder, as the sun sets over the university campus."
@@ -186,7 +188,7 @@ dialogue_list.append(
     "Meeting? THAT'S RIGHT! I almost shouted when I realised I had a group meeting today."
     )
 dialogue_list.append(
-    "I head to the group discussion with my friend."
+    "You head to the group discussion with your friend."
     )
 dialogue_list.append(
     "You feel super tired today so you head straight to the hostel."
@@ -194,3 +196,9 @@ dialogue_list.append(
 dialogue_list.append(
     "... Unfortunately, you have forgotten your business group discussion."
     )
+dialogue_list.append(
+    "Congratulations! "
+    )
+dialogue_list.append(
+    "You’re a legend in decision-making ! "
+)
