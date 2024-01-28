@@ -769,6 +769,9 @@ while run:
                 elif current_screen == 32:
                     if pygame.mouse.get_pressed()[0] == 1:
                         current_screen = 37 
+                elif current_screen == 42:
+                    if pygame.mouse.get_pressed()[0] == 1:
+                        current_screen = current_screen
                 elif current_screen == 45:
                     if navigate(100):
                         current_screen = 46
@@ -809,36 +812,54 @@ while run:
                     if pygame.mouse.get_pressed()[0] == 1: #change to the next screen in order
                         current_screen += 1
             
-
     #loop for quiz game in screen 42 - LEE CHIA YING
     if current_screen == 42:    
-        correct_ans_chosen = False  #setting as False to repeat the loop when the user clicks on the incorrect button
+            correct_ans_chosen = False  #setting as False to repeat the loop when the user clicks on the incorrect button
+            
+            if heart_score > 1:
+                if navigate(140):
+                    savedata('correct answer')
+                    current_screen += 1
+                    screen42()
+                elif navigate(70) or navigate(210):
+                    savedata('wrong answer')
+                    heart_score -= 1
+                    screen42()
+                    while correct_ans_chosen == False: #while True
+                        
+                        for event in pygame.event.get(): #make sure the game can be properly exit even when inside the loop
+                            if event.type == pygame.QUIT:
+                                newgame()
+                                run = False
+
+                            elif event.type == pygame.MOUSEBUTTONDOWN: # when mouse button is clicked
+                                if navigate(140):
+                                    savedata('correct answer')
+                                    correct_ans_chosen = True  # Exit the loop when the correct button is chosen
+                                elif navigate(70) or navigate(210):
+                                    if heart_score > 1:
+                                        savedata('wrong answer')
+                                        heart_score -= 1
+                                        correct_ans_chosen = False
+                                        screen42()
+                                    else:
+                                        correct_ans_chosen = True
+                                else:
+                                    correct_ans_chosen = False
+                                    screen42()
+
+            elif heart_score == 1:
+                if navigate(140):
+                    savedata('correct answer')
+                    current_screen += 1
+                elif navigate(70) or navigate(210):
+                    savedata('wrong answer')
+                    heart_score -= 1
+                    play_sound('badEnd.mp3')
+                    current_screen = 0
         
-        while correct_ans_chosen == False: #while True
 
-            for event in pygame.event.get(): #make sure the game can be properly exit even when inside the loop
-                if event.type == pygame.QUIT:
-                    newgame()
-                    run = False
 
-                elif event.type == pygame.MOUSEBUTTONDOWN: # when mouse button is clicked
-                    if navigate(140):
-                        current_screen += 1
-                        correct_ans_chosen = True  # Exit the loop when the correct button is chosen
-                    elif navigate(70) or navigate(210):
-                        if heart_score > 0:
-                            heart_score -= 1
-                            correct_ans_chosen = False
-                            screen42()
-                        else:
-                            correct_ans_chosen = True
-                    else:
-                        correct_ans_chosen = False
-                        screen42()
-
-        correct_ans_chosen = True
-        current_screen += 1
-        
     #calling the screen function - FATIMAH NAJIHAH
     if 0 <= current_screen < len(screens): #the code will only work for the range of the existing number of screen
         screens[current_screen]()
