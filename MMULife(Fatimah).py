@@ -162,7 +162,7 @@ def screen6():
 #scene:bedroom
 def screen7():
     bg('bedroom.jpg')
-    draw_box((width-150),0,150,37,white) #white heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart score text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -170,7 +170,7 @@ def screen7():
     pygame.display.flip()
 def screen8():
     bg('bedroom.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -178,12 +178,12 @@ def screen8():
     pygame.display.flip()
 def screen9():
     bg('bedroom.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_button((width - 280) // 2, 100, 280, 60)
     draw_text(choice_list[1], 20, font_color, 365, 133)
     draw_button((width - 280) // 2, 190, 280, 60)
     draw_text(choice_list[2], 20, font_color, 365, 220)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -191,7 +191,7 @@ def screen9():
     pygame.display.flip()
 def screen10():
     bg('bedroom.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -199,7 +199,7 @@ def screen10():
     pygame.display.flip()
 def screen11():
     bg('bedroom.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -207,7 +207,7 @@ def screen11():
     pygame.display.flip()
 def screen12():
     bg('bedroom.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -215,7 +215,7 @@ def screen12():
     pygame.display.flip()
 def screen13():
     bg('bedroom.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -225,7 +225,7 @@ def screen13():
 #scene:morning
 def screen14():
     bg('morning.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -237,7 +237,7 @@ def screen15():
     draw_text(choice_list[3], 20, font_color, 365, 133)
     draw_button((width - 280) // 2, 190, 280, 60)
     draw_text(choice_list[4], 20, font_color, 365, 220)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -245,7 +245,7 @@ def screen15():
     pygame.display.flip()
 def screen16():
     bg('morning.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -255,7 +255,7 @@ def screen16():
 #scene:walking
 def screen17():
     bg('walking.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -267,7 +267,7 @@ def screen18():
     draw_text(choice_list[5], 20, font_color, 365, 133)
     draw_button((width - 280) // 2, 190, 280, 60)
     draw_text(choice_list[6], 20, font_color, 365, 220)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -275,7 +275,7 @@ def screen18():
     pygame.display.flip()
 def screen19():
     bg('walking.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -283,7 +283,7 @@ def screen19():
     pygame.display.flip()
 def screen20():
     bg('walking.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -291,7 +291,7 @@ def screen20():
     pygame.display.flip()
 def screen21():
     bg('walking.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -301,7 +301,7 @@ def screen21():
 #scene:entering class
 def screen22():
     bg('class.png')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -309,7 +309,7 @@ def screen22():
     pygame.display.flip()
 def screen23():
     bg('class.png')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -318,7 +318,7 @@ def screen23():
 def screen24():
     bg('class.png')
     popup_image('silhouette.png', 230, 100)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -331,7 +331,7 @@ def screen25():
     draw_text(choice_list[7], 20, font_color, 365, 133)
     draw_button((width - 280) // 2, 190, 280, 60)
     draw_text(choice_list[8], 20, font_color, 365, 220)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -339,7 +339,7 @@ def screen25():
     pygame.display.flip()
 def screen26():
     bg('class.png')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -347,7 +347,7 @@ def screen26():
     pygame.display.flip()
 def screen27():
     bg('class.png')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -356,7 +356,7 @@ def screen27():
 #scene:in class
 def screen28():
     bg('class.png')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -364,7 +364,7 @@ def screen28():
     pygame.display.flip()
 def screen29():
     bg('class.png')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -378,7 +378,7 @@ def screen30():
     draw_text(choice_list[10], 20, font_color, 365, 170)
     draw_button((width - 280) // 2, 210, 280, 60)
     draw_text(choice_list[11], 20, font_color, 365, 240)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -387,7 +387,7 @@ def screen30():
 def screen31():
     bg('class.png')
     popup_image('mrbean.jpg', 270, 100)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -395,7 +395,7 @@ def screen31():
     pygame.display.flip()
 def screen32():
     bg('class.png')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -403,7 +403,7 @@ def screen32():
     pygame.display.flip()
 def screen33():
     bg('class.png')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -412,7 +412,7 @@ def screen33():
 def screen34():
     bg('class.png')
     popup_image('silhouette.png', 230, 100)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -421,7 +421,7 @@ def screen34():
 def screen35():
     bg('class.png')
     popup_image('silhouette.png', 230, 100)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -430,7 +430,7 @@ def screen35():
 def screen36():
     bg('class.png')
     popup_image('meme.jpg', 270, 100)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -439,7 +439,7 @@ def screen36():
 #scene:class ending
 def screen37():
     bg('class.png')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -447,7 +447,7 @@ def screen37():
     pygame.display.flip()
 def screen38():
     bg('class.png')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -456,7 +456,7 @@ def screen38():
 def screen39():
     bg('class.png')
     popup_image('silhouette.png', 230, 100)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -464,7 +464,7 @@ def screen39():
     pygame.display.flip()
 def screen40():
     bg('class.png')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -472,7 +472,7 @@ def screen40():
     pygame.display.flip()
 def screen41():
     bg('class.png')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -488,7 +488,7 @@ def screen42():
     draw_text(quiz_options_list[2], 20, blue, 365, 240)
     draw_box(10, 330, 700, 140, (184, 174, 159))
     draw_text(dialogue_list[36], 20, font_color, 370, 360)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text 
     popup_image('heart.png', 585, 3) #heart image
     pygame.display.flip()
@@ -496,7 +496,7 @@ def screen42():
 #scene:walking back
 def screen43():
     bg('walking.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -504,7 +504,7 @@ def screen43():
     pygame.display.flip()
 def screen44():
     bg('stall.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -512,7 +512,7 @@ def screen44():
     pygame.display.flip()
 def screen45():
     bg('stall.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -524,7 +524,7 @@ def screen46():
     draw_text(choice_list[12], 20, font_color, 365, 133)
     draw_button((width - 280) // 2, 190, 280, 60)
     draw_text(choice_list[13], 20, font_color, 365, 220)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -532,7 +532,7 @@ def screen46():
     pygame.display.flip()
 def screen47():
     bg('stall.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -540,7 +540,7 @@ def screen47():
     pygame.display.flip()
 def screen48():
     bg('stall.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -548,7 +548,7 @@ def screen48():
     pygame.display.flip()
 def screen49():
     bg('stall.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -556,7 +556,7 @@ def screen49():
     pygame.display.flip()
 def screen50():
     bg('walking.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -568,7 +568,7 @@ def screen51():
     draw_text(choice_list[14], 20, font_color, 365, 133)
     draw_button((width - 280) // 2, 190, 280, 60)
     draw_text(choice_list[15], 20, font_color, 365, 220)
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -576,7 +576,7 @@ def screen51():
     pygame.display.flip()
 def screen52():
     bg('walking.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -584,7 +584,7 @@ def screen52():
     pygame.display.flip()
 def screen53():
     bg('walking.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -592,7 +592,7 @@ def screen53():
     pygame.display.flip()
 def screen54():
     bg('walking.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -600,7 +600,7 @@ def screen54():
     pygame.display.flip()
 def screen55():
     bg('walking.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -608,7 +608,7 @@ def screen55():
     pygame.display.flip()
 def screen56():
     bg('walking.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
@@ -616,7 +616,7 @@ def screen56():
     pygame.display.flip()
 def screen57():
     bg('walking.jpg')
-    draw_box((width-150),0,150,37,white) #heart bg
+    popup_image('heartscore_bg.png',(width-150),-14)
     draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
     popup_image('heart.png', 585, 3) #heart image
     draw_box() #dialogue box
