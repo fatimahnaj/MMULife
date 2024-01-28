@@ -814,7 +814,7 @@ while run:
     if current_screen == 42:    
         correct_ans_chosen = False  #setting as False to repeat the loop when the user clicks on the incorrect button
         
-        while not correct_ans_chosen: #while True
+        while correct_ans_chosen == False: #while True
 
             for event in pygame.event.get(): #make sure the game can be properly exit even when inside the loop
                 if event.type == pygame.QUIT:
@@ -826,13 +826,19 @@ while run:
                         current_screen += 1
                         correct_ans_chosen = True  # Exit the loop when the correct button is chosen
                     elif navigate(70) or navigate(210):
-                        heart_score -= 1
-                        correct_ans_chosen = False
-                        screen42()
+                        if heart_score > 0:
+                            heart_score -= 1
+                            correct_ans_chosen = False
+                            screen42()
+                        else:
+                            correct_ans_chosen = True
                     else:
                         correct_ans_chosen = False
                         screen42()
 
+        correct_ans_chosen = True
+        current_screen += 1
+        
     #calling the screen function - FATIMAH NAJIHAH
     if 0 <= current_screen < len(screens): #the code will only work for the range of the existing number of screen
         screens[current_screen]()
