@@ -1,3 +1,5 @@
+#all the text that we want to display - FATIMAH NAJIHAH
+
 #choices
 choice_list = ([])
 
@@ -8,8 +10,8 @@ choice_list.append('skip')
 choice_list.append('take a bath')
 choice_list.append('play with the cat')
 choice_list.append('ignore the cat')
-choice_list.append('Accept Mr Winwin suggestion.')
-choice_list.append('Continue searching for a seat.')
+choice_list.append('Accept Mr Winwin suggestion')
+choice_list.append('Continue searching for a seat')
 choice_list.append('Use matches')
 choice_list.append('Pinch yourself')
 choice_list.append('Make an escape')
@@ -18,7 +20,7 @@ choice_list.append('Save money')
 choice_list.append('Go back to hostel ')
 choice_list.append('Walk around campus')
 
-#options for pop quiz
+#options for pop quiz - LEE CHIA YING
 quiz_options_list = ([])
 
 quiz_options_list.append('E')
@@ -63,7 +65,7 @@ dialogue_list.append(
     "As you look around your room, you notice your roommate deeply engrossed in playing Genshin Impact. Suddenly, a mischievous idea sparks in your mind… "
     )
 dialogue_list.append(
-    "“I have an early class tomorrow. I should stick to my sleep schedule.”"
+    "“I have early class tomorrow. I should stick to my sleep schedule.”"
     )
 dialogue_list.append(
     " “It’s just for a while, I’ll catch up on sleep later.” "
@@ -91,7 +93,7 @@ dialogue_list.append(
     "..meow meoww (..and now you’re late for class)"
     )
 dialogue_list.append(
-    "....."
+    "And you arrive just in time for class!"
     )
 #entering class
 dialogue_list.append(
@@ -107,7 +109,7 @@ dialogue_list.append(
     "“Sure, I’ll take a chair and sit at the front. It’s my pleasure :-) “"
     )
 dialogue_list.append(
-    "Opt for a seat at the back, potentially escaping the lecturer’s watchful eye. (and wanna sit with your crush)"
+    "Opt for a seat at the back, but you accidentally trip over a backpack of your classmate while trying to find your seat."
     )
 #class scene
 dialogue_list.append(
@@ -142,7 +144,7 @@ dialogue_list.append(
     "Before it dismisses, Mr Winwin, with his smirking face, says,"
     )
 dialogue_list.append(
-    "“Alright, folks, before you dash off, I have a little surprise for you! Survive the unexpected pop quiz and leave the classroom alive!”"
+    "“Alright folks, before you dash off, I have a little surprise for you! Survive the unexpected pop quiz and leave the classroom alive!”"
     )
 dialogue_list.append(
     "The room filled with a sound of disappointment as students realized their happiness was interrupted."
@@ -201,4 +203,7 @@ dialogue_list.append(
     )
 dialogue_list.append(
     "You’re a legend in decision-making ! "
+)
+dialogue_list.append(
+    "click anywhere to continue"
 )
