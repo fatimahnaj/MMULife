@@ -9,9 +9,13 @@
 # Phones: 01160577079 | 0133935166 | 0165378895
 # ********************************************************* 
 
+
+#overall GUI (displaying everything for each screen) - FATIMAH NAJIHAH
+#used flappy.py as reference
+
 import pygame
 from pygame import mixer
-from Text import *
+from Text import * 
 
 #initialize pygame so that the code will work
 pygame.init()
@@ -26,10 +30,9 @@ screen = pygame.display.set_mode(screen_size) # opens up a window
 pygame.display.set_caption('MMULife') # window name
 
 
-# stores the width & height of the screen into a variable
+# stores the width of the screen into a variable
 # to be used for centering objects
 width = screen.get_width()  
-height = screen.get_height() 
 
 #define font color
 font_color = (91, 72, 59)
@@ -106,15 +109,18 @@ def navigate(y):
     else:
         return False
     
+#saving data - YANG ALYA MYSARAH
 def savedata(button):
     with open ('Savedata.txt', 'a') as file:
         file.write(f'Player choose "{button}" button in screen{current_screen}\n')
 
+#add ---- line to know that the player has exited the game
 def newgame():
     with open ('Savedata.txt', 'a') as file:
         file.write('-------------------------------------------------------\n')
-#screens
 
+
+#screens - FATIMAH NAJIHAH
 #scene: introduction       
 def screen1():
     bg('opening.png')
@@ -642,13 +648,13 @@ screens = [screen0, screen1,screen2, screen3, screen4, screen5, screen6, screen7
            screen34, screen35, screen36, screen37, screen38, screen39,  screen41, screen42, screen43, screen44, screen45, screen46, screen47, screen48, screen49, screen50,
            screen51, screen52, screen53, screen54, screen55, screen56, screen57, screen58]
     
-#initialize the score, the score starts with 3 hearts
-heart_score = 3
-
 #initialize the screen number
 current_screen = 1
 
-#setting as False to repeat the loop when the user clicks on the incorrect button
+#initialize the score, the score starts with 3 hearts - LEE CHIA YING
+heart_score = 3
+
+#setting as False to repeat the loop when the user clicks on the incorrect button - LEE CHIA YING
 loop_chosen = False
 
 
@@ -804,7 +810,7 @@ while run:
                         current_screen += 1
             
 
-                
+    #loop for quiz game in screen 42 - LEE CHIA YING
     if current_screen == 42:    
         correct_ans_chosen = False  #setting as False to repeat the loop when the user clicks on the incorrect button
         
@@ -827,7 +833,7 @@ while run:
                         correct_ans_chosen = False
                         screen42()
 
-    #calling the screen function
+    #calling the screen function - FATIMAH NAJIHAH
     if 0 <= current_screen < len(screens): #the code will only work for the range of the existing number of screen
         screens[current_screen]()
     
