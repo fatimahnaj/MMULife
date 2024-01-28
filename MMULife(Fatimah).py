@@ -75,15 +75,27 @@ def draw_text(text, size=20, color=font_color, x=370, y=360):
 
     #making new line (in case the sentence is too long)
     if len(text) > 69:
-        text_split = text[0:69] + "-"
-        set_text = font.render(text_split, True, color)
-        rect_text = set_text.get_rect(center=(x,y))
-        screen.blit(set_text, rect_text)
-        
-        new_line = text[69:]
-        set_text = font.render(new_line, True, color)
-        rect_text = set_text.get_rect(center=(x,y+26))
-        screen.blit(set_text, rect_text)
+        if text[68] or text[69] != " ":
+            text_split = text[0:69] + "-"
+            set_text = font.render(text_split, True, color)
+            rect_text = set_text.get_rect(center=(x,y))
+            screen.blit(set_text, rect_text)
+            
+            new_line = text[69:]
+            set_text = font.render(new_line, True, color)
+            rect_text = set_text.get_rect(center=(x,y+26))
+            screen.blit(set_text, rect_text)
+
+        else:
+            text_split = text[0:69]
+            set_text = font.render(text_split, True, color)
+            rect_text = set_text.get_rect(center=(x,y))
+            screen.blit(set_text, rect_text)
+            
+            new_line = text[69:]
+            set_text = font.render(new_line, True, color)
+            rect_text = set_text.get_rect(center=(x,y+26))
+            screen.blit(set_text, rect_text)
     else:
          set_text = font.render(text, True, color)
          rect_text = set_text.get_rect(center=(x,y))
