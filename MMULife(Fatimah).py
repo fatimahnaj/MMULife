@@ -13,9 +13,10 @@ import pygame
 from pygame import mixer
 from Text import *
 
+#initialize pygame so that the code will work
 pygame.init()
 
-#to used for the game fps
+#to be used for the game fps
 clock = pygame.time.Clock()
 fps = 15
 
@@ -86,7 +87,7 @@ def draw_text(text, size=20, color=font_color, x=370, y=360):
          screen.blit(set_text, rect_text)
 
 
-#line 95-101 : followed by a youtube tutorial (https://www.youtube.com/watch?v=pcdB2s2y4Qc)  
+#play_bgm and play_sound function : followed by a youtube tutorial (https://www.youtube.com/watch?v=pcdB2s2y4Qc)  
 def play_bgm(bgm_file):
     mixer.music.load(bgm_file)
     mixer.music.play(-1)
@@ -95,6 +96,7 @@ def play_sound(sound_file):
     sound = mixer.Sound(sound_file)
     sound.play()
 
+#navigation (move to -- screen when -- choice is made)
 def navigate(y):
     set_button = pygame.Rect((width - 280) // 2, y, 280, 60)
     mouse_x, mouse_y = pygame.mouse.get_pos()
@@ -103,40 +105,50 @@ def navigate(y):
         return True
     else:
         return False
+    
+def savedata(button):
+    with open ('Savedata.txt', 'a') as file:
+        file.write(f'Player choose "{button}" button in screen{current_screen}\n')
 
+def newgame():
+    with open ('Savedata.txt', 'a') as file:
+        file.write('-------------------------------------------------------\n')
 #screens
 
 #scene: introduction       
 def screen1():
     bg('opening.png')
     play_bgm('bgm.mp3')
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[0])
-    pygame.display.flip()
+    draw_box() #dialogue box
+    draw_text(dialogue_list[0]) #dialogue text
+    draw_text("click anywhere to continue", 15,white,610,450) #instruction
+    pygame.display.flip() #update the display
 def screen2():
     bg('opening.png')
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[1])
+    draw_box() #dialogue box
+    draw_text(dialogue_list[1]) #dialogue text
+    draw_text("click anywhere to continue", 15,white,610,450) #instruction
     pygame.display.flip()
 def screen3():
     bg('opening.png')
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[2])
+    draw_box() #dialogue box
+    draw_text(dialogue_list[2]) #dialogue text
+    draw_text("click anywhere to continue", 15,white,610,450) #instruction
     pygame.display.flip()
 def screen4():
     bg('opening.png')
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[3])
+    draw_box() #dialogue box
+    draw_text(dialogue_list[3]) #dialogue text
     pygame.display.flip()
 def screen5():
     bg('opening.png')
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[4])
+    draw_box() #dialogue box
+    draw_text(dialogue_list[4]) #dialogue text
     pygame.display.flip()
 def screen6():
     bg('opening.png')
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[5])
+    draw_box() #dialogue box
+    draw_text(dialogue_list[5]) #dialogue text
     draw_button((width - 150) // 2, 390, 150, 50, darkMaroon, maroon)
     draw_text(choice_list[0], 25, (255,255,255), 360, 418)
     pygame.display.flip()
@@ -144,76 +156,74 @@ def screen6():
 #scene:bedroom
 def screen7():
     bg('bedroom.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[6])
+    draw_box((width-150),0,150,37,white) #white heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart score text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[6]) #dialogue text
     pygame.display.flip()
 def screen8():
     bg('bedroom.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[7])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[7]) #dialogue text
     pygame.display.flip()
 def screen9():
     bg('bedroom.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
+    draw_box((width-150),0,150,37,white) #heart bg
     draw_button((width - 280) // 2, 100, 280, 60)
     draw_text(choice_list[1], 20, font_color, 365, 133)
     draw_button((width - 280) // 2, 190, 280, 60)
     draw_text(choice_list[2], 20, font_color, 365, 220)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[7])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[7]) #dialogue text
     pygame.display.flip()
 def screen10():
     bg('bedroom.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[8])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[8]) #dialogue text
     pygame.display.flip()
 def screen11():
     bg('bedroom.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[9])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[9]) #dialogue text
     pygame.display.flip()
 def screen12():
     bg('bedroom.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[10])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[10])
     pygame.display.flip()
 def screen13():
     bg('bedroom.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[11], 20, (255,0,0), 370, 360)
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[11], 20, (255,0,0), 370, 360)
     pygame.display.flip()
 
 #scene:morning
 def screen14():
     bg('morning.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[12])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[12])
     pygame.display.flip()
 def screen15():
     bg('morning.jpg')
@@ -221,29 +231,29 @@ def screen15():
     draw_text(choice_list[3], 20, font_color, 365, 133)
     draw_button((width - 280) // 2, 190, 280, 60)
     draw_text(choice_list[4], 20, font_color, 365, 220)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[12])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[12])
     pygame.display.flip()
 def screen16():
     bg('morning.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[13])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[13])
     pygame.display.flip()
 
 #scene:walking
 def screen17():
     bg('walking.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[14])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[14])
     pygame.display.flip()
 def screen18():
     bg('walking.jpg')
@@ -251,62 +261,62 @@ def screen18():
     draw_text(choice_list[5], 20, font_color, 365, 133)
     draw_button((width - 280) // 2, 190, 280, 60)
     draw_text(choice_list[6], 20, font_color, 365, 220)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[14])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[14])
     pygame.display.flip()
 def screen19():
     bg('walking.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[15])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[15])
     pygame.display.flip()
 def screen20():
     bg('walking.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[16])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[16])
     pygame.display.flip()
 def screen21():
     bg('walking.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[17])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[17])
     pygame.display.flip()
 
 #scene:entering class
 def screen22():
     bg('class.png')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[18])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[18])
     pygame.display.flip()
 def screen23():
     bg('class.png')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[19])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[19])
     pygame.display.flip()
 def screen24():
     bg('class.png')
     popup_image('silhouette.png', 230, 100)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[20])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[20])
     pygame.display.flip()
 def screen25():
     bg('class.png')
@@ -315,44 +325,44 @@ def screen25():
     draw_text(choice_list[7], 20, font_color, 365, 133)
     draw_button((width - 280) // 2, 190, 280, 60)
     draw_text(choice_list[8], 20, font_color, 365, 220)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[20])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[20])
     pygame.display.flip()
 def screen26():
     bg('class.png')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[21])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[21])
     pygame.display.flip()
 def screen27():
     bg('class.png')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[22])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[22])
     pygame.display.flip()
 #scene:in class
 def screen28():
     bg('class.png')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[23])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[23])
     pygame.display.flip()
 def screen29():
     bg('class.png')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[24])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[24])
     pygame.display.flip()
 def screen30():
     bg('class.png')
@@ -362,105 +372,105 @@ def screen30():
     draw_text(choice_list[10], 20, font_color, 365, 170)
     draw_button((width - 280) // 2, 210, 280, 60)
     draw_text(choice_list[11], 20, font_color, 365, 240)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[24])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[24])
     pygame.display.flip()
 def screen31():
     bg('class.png')
     popup_image('mrbean.jpg', 270, 100)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[25])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[25])
     pygame.display.flip()
 def screen32():
     bg('class.png')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[26])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[26])
     pygame.display.flip()
 def screen33():
     bg('class.png')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[27])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[27])
     pygame.display.flip()
 def screen34():
     bg('class.png')
     popup_image('silhouette.png', 230, 100)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[28])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[28])
     pygame.display.flip()
 def screen35():
     bg('class.png')
     popup_image('silhouette.png', 230, 100)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[29])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[29])
     pygame.display.flip()
 def screen36():
     bg('class.png')
     popup_image('meme.jpg', 270, 100)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[30])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[30])
     pygame.display.flip()
 #scene:class ending
 def screen37():
     bg('class.png')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[31])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[31])
     pygame.display.flip()
 def screen38():
     bg('class.png')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[32])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[32])
     pygame.display.flip()
 def screen39():
     bg('class.png')
     popup_image('silhouette.png', 230, 100)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[33])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[33])
     pygame.display.flip()
 def screen40():
     bg('class.png')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[34])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[34])
     pygame.display.flip()
 def screen41():
     bg('class.png')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[35])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[35])
     pygame.display.flip()
 def screen42():
     bg('class.png')
@@ -472,35 +482,35 @@ def screen42():
     draw_text(quiz_options_list[2], 20, blue, 365, 240)
     draw_box(10, 330, 700, 140, (184, 174, 159))
     draw_text(dialogue_list[36], 20, font_color, 370, 360)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) 
-    heart_img = popup_image('heart.png', 585, 3)
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text 
+    popup_image('heart.png', 585, 3) #heart image
     pygame.display.flip()
 
 #scene:walking back
 def screen43():
     bg('walking.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[37])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[37])
     pygame.display.flip()
 def screen44():
     bg('stall.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[38])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[38])
     pygame.display.flip()
 def screen45():
     bg('stall.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[39])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[39])
     pygame.display.flip()
 def screen46():
     bg('stall.jpg')
@@ -508,43 +518,43 @@ def screen46():
     draw_text(choice_list[12], 20, font_color, 365, 133)
     draw_button((width - 280) // 2, 190, 280, 60)
     draw_text(choice_list[13], 20, font_color, 365, 220)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[40])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[40])
     pygame.display.flip()
 def screen47():
     bg('stall.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[41])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[41])
     pygame.display.flip()
 def screen48():
     bg('stall.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[42])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[42])
     pygame.display.flip()
 def screen49():
     bg('stall.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[43])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[43])
     pygame.display.flip()
 def screen50():
     bg('walking.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[44])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[44])
     pygame.display.flip()
 def screen51():
     bg('walking.jpg')
@@ -552,59 +562,59 @@ def screen51():
     draw_text(choice_list[14], 20, font_color, 365, 133)
     draw_button((width - 280) // 2, 190, 280, 60)
     draw_text(choice_list[15], 20, font_color, 365, 220)
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[44])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[44])
     pygame.display.flip()
 def screen52():
     bg('walking.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[45])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[45])
     pygame.display.flip()
 def screen53():
     bg('walking.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[46])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[46])
     pygame.display.flip()
 def screen54():
     bg('walking.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[47])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[47])
     pygame.display.flip()
 def screen55():
     bg('walking.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[48])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[48])
     pygame.display.flip()
 def screen56():
     bg('walking.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[49])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[49])
     pygame.display.flip()
 def screen57():
     bg('walking.jpg')
-    heart_bg = draw_box((width-150),0,150,37,white)
-    heart_text = draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20)
-    heart_img = popup_image('heart.png', 585, 3)
-    dialogue_box = draw_box()
-    dialogue = draw_text(dialogue_list[50])
+    draw_box((width-150),0,150,37,white) #heart bg
+    draw_text(f"Heart: {heart_score}", 25, score_color, 660, 20) #heart text
+    popup_image('heart.png', 585, 3) #heart image
+    draw_box() #dialogue box
+    draw_text(dialogue_list[50])
     pygame.display.flip()
 def screen58():
     bg('opening.png')
@@ -643,26 +653,33 @@ loop_chosen = False
 
 
 # Main loop
-while True:
+run = True
+while run:
 
     clock.tick(fps)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
+            newgame()
+            run = False
 
-        #navigation
+        #navigation & saving data - YANG ALYA MYSARAH
+        #heart score = LEE CHIA YING
         else:
-            #if heart_score > 0:
-                if current_screen == 6: #screen yg ada choices
+                if current_screen == 6: #screen with choices
                     if navigate(380):
-                        current_screen = 7 #next screen yg kita nak navigate to
+                        current_screen = 7 #the next screen that we want to navigate to
+                        savedata(choice_list[0])
                     else:
-                        current_screen = current_screen #the screen wont change if tak tekan the button
-                elif current_screen == 0:
-                    heart_score = 3
+                        current_screen = current_screen #the screen wont change if we click places other than the button
+                elif current_screen == 0: #game over screen
+                    heart_score = 3 #restart the heart score (now the player can restart the game)
                     if navigate(380):
                         current_screen = 1
+                        savedata('play again')
+                        newgame()
+                    else:
+                        current_screen = current_screen
                 elif heart_score <= 0:
                     play_sound('badEnd.mp3')
                     current_screen = 0
@@ -671,10 +688,12 @@ while True:
                     if navigate(100):
                         current_screen = 10
                         heart_score += 1
+                        savedata(choice_list[1])
                     elif navigate(190):
                         play_sound('genshin.mp3')
                         current_screen = 11
                         heart_score -= 1
+                        savedata(choice_list[2])
                     else:
                         current_screen = current_screen
                 elif current_screen == 10:
@@ -683,11 +702,12 @@ while True:
                 elif current_screen == 15:
                     if navigate(100):
                         current_screen = 16
-                        heart_score -= 1 
+                        heart_score -= 1
+                        savedata(choice_list[3]) 
                     elif navigate(190):
                         current_screen = 17
                         heart_score += 1
-                        play_sound('meow.mp3')
+                        savedata(choice_list[4])
                     else:
                         current_screen = current_screen
                 elif current_screen == 18:
@@ -695,9 +715,11 @@ while True:
                         play_sound('meow.mp3')
                         current_screen = 19
                         heart_score -= 1
+                        savedata(choice_list[5])
                     elif navigate(190):
                         current_screen = 21
                         heart_score += 1
+                        savedata(choice_list[6])
                     else:
                         current_screen = current_screen
                 elif current_screen == 20:
@@ -710,9 +732,11 @@ while True:
                     if navigate(100):
                         current_screen = 26
                         heart_score += 1
+                        savedata(choice_list[7])
                     elif navigate(190):
                         current_screen = 27
                         heart_score -= 1
+                        savedata(choice_list[8])
                     else:
                         current_screen = current_screen
                 elif current_screen == 26:
@@ -722,12 +746,15 @@ while True:
                     if navigate(70):
                         current_screen = 31
                         heart_score += 1
+                        savedata(choice_list[9])
                     elif navigate(140):
                         current_screen = 32
                         heart_score -= 1
+                        savedata(choice_list[10])
                     elif navigate(210):
                         current_screen = 33
                         heart_score -= 2
+                        savedata(choice_list[11])
                     else:
                         current_screen = current_screen 
                 elif current_screen == 31:
@@ -740,8 +767,10 @@ while True:
                     if navigate(100):
                         current_screen = 46
                         heart_score -= 2
+                        savedata(choice_list[12])
                     elif navigate(190):
                         current_screen = 48
+                        savedata(choice_list[13])
                     else:
                         current_screen = current_screen 
                 elif current_screen == 47:
@@ -754,9 +783,11 @@ while True:
                     if navigate(100):
                         current_screen = 56
                         heart_score -= 1
+                        savedata(choice_list[14])
                     elif navigate(190):
                         current_screen = 51
                         heart_score += 1
+                        savedata(choice_list[15])
                     else:
                         current_screen = current_screen 
                 elif current_screen == 54:
@@ -766,8 +797,10 @@ while True:
                     if navigate(380):
                         current_screen = 1
                         heart_score = 3
+                        savedata('play again')
+                        newgame()
                 else:
-                    if pygame.mouse.get_pressed()[0] == 1:
+                    if pygame.mouse.get_pressed()[0] == 1: #change to the next screen in order
                         current_screen += 1
             
 
@@ -777,11 +810,12 @@ while True:
         
         while not correct_ans_chosen: #while True
 
-            for event in pygame.event.get():
+            for event in pygame.event.get(): #make sure the game can be properly exit even when inside the loop
                 if event.type == pygame.QUIT:
-                    pygame.quit() 
+                    newgame()
+                    run = False
 
-                elif event.type == pygame.MOUSEBUTTONDOWN:
+                elif event.type == pygame.MOUSEBUTTONDOWN: # when mouse button is clicked
                     if navigate(140):
                         current_screen += 1
                         correct_ans_chosen = True  # Exit the loop when the correct button is chosen
@@ -793,5 +827,10 @@ while True:
                         correct_ans_chosen = False
                         screen42()
 
-    if 0 <= current_screen < len(screens):
+    #calling the screen function
+    if 0 <= current_screen < len(screens): #the code will only work for the range of the existing number of screen
         screens[current_screen]()
+    
+    pygame.display.flip()
+
+pygame.quit()
