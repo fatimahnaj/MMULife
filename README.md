@@ -15,7 +15,7 @@ Level 1 - in the dorm/hostel
 Level 2 - in Mr Winwin’s class
 Level 3 - after class ( on the way to the dorm? )
 
-Addition / special features : heart SCORE(what happen when the player dies), GUI, sound effect
+Addition / special features : heart SCORE, GUI, sound effect, popquiz loop
 
 ![navigation remainingheart](https://github.com/fatimahnaj/MMULife/assets/154648504/6d1a0999-7bc0-4bd5-8884-c417c6024e6d)
 
@@ -112,8 +112,7 @@ Choice 2 : walk around campus for a while
 >Gain a heart: You remember your group discussion (good ending)
 
 <<<GAME OVER>>>
-Your remaining heart: ?
-> if the player has managed to preserve at least one heart (heart >=1):
+> if the player has managed to preserve at least one heart (heart >= 1):
 “Congratulations! You’re a legend in decision-making.”
 
 (*IF POSSIBLE: NAVIGATE TO THIS PAGE IF PLAYER’S REMAINING HEART = 0) 
