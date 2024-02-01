@@ -1,21 +1,20 @@
-Adventure Game (MMU parody)
+Adventure Game
 
 Program Name: MMU-life (My Miserable Uni-life)
 
-(Development Steps)
 Basic Story
 a) What is it about? 
     A student’s adventure to choose the best choices throughout the day. There are three levels in the game: in the hostel, in class, and after class. The player has to go through the selection on each level and keep at least one heart (remaining life) at the end of the day.
+    
  b) Story Settings: 
-
 Time? 
 A day
 Place?
 Level 1 - in the dorm/hostel
 Level 2 - in Mr Winwin’s class
-Level 3 - after class ( on the way to the dorm? )
+Level 3 - after class ( on the way going back to the dorm )
 
-Addition / special features : heart SCORE, GUI, sound effect, popquiz loop
+Addition / special features : heart score, GUI, sound effect, quiz looping
 
 ![navigation remainingheart](https://github.com/fatimahnaj/MMULife/assets/154648504/6d1a0999-7bc0-4bd5-8884-c417c6024e6d)
 
@@ -32,7 +31,7 @@ Throughout your journey, every choice you make might earn you an extra heart or 
 Are you ready to start your journey? Let’s gooooo!!!
 
 
-
+* Game starts with 3 hearts
 HEARTS GIVEN - 3/8
 —--Level 1—-- (dorm) 
 The night before your school day, you’re ready to go to your bed and sleep at 11pm because you have an early 8am class the next morning. As you look around your room, you notice your roommate deeply engrossed in playing Genshin Impact. Suddenly, a mischievous idea sparks in your mind… 
@@ -56,8 +55,7 @@ Choice 1 - Play with the cat: “Hi cutie, good morningg!!”
 Choice 2 - Ignore the cat: “ …”
 > Gain a heart: You arrive just in time for class
 
-END - <<< LEVEL COMPLETE >>> Good luck for your next level!
-
+END - <<< LEVEL COMPLETE >>>
 
 
 —--Level 2—-- (class)
@@ -85,7 +83,7 @@ Question:
 >>> repeating the question (while loop) until the player gets it right
 
 
-END - <<< LEVEL COMPLETE >>> Good luck for your next level!
+END - <<< LEVEL COMPLETE >>>
 
 
 —--Level 3—-- (after class)
